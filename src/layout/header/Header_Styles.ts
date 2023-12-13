@@ -29,7 +29,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   height: 50px;
 
   position: relative;
-  z-index: 9;
+  z-index: 99;
 
   ${props => props.isOpen && css<{ isOpen: boolean }>`
     width: 50px;
@@ -87,9 +87,11 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   width: 100%;
   height: 100%;
   display: none;
+  
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 9;
 
   ${props => props.isOpen && css<{ isOpen: boolean }>`
     display: flex;

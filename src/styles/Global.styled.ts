@@ -1,6 +1,5 @@
 import {createGlobalStyle} from "styled-components";
 import {theme} from "./Theme";
-import {font} from "./FontMixin";
 import bgImg from '../assets/images/Bg.webp'
 
 export const GlobalStyle = createGlobalStyle`
@@ -13,10 +12,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    ${font({Fmax: 16, Fmin: 14})}
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    font-size: 16px;
+    line-height: 160%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-image: linear-gradient(to bottom,
@@ -40,5 +40,13 @@ export const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     border: none;
     cursor: pointer;
+  }
+  
+  section{
+    padding: 46px 0;
+  }
+  
+  .accent{
+    color: ${theme.colors.accent};
   }
 `
