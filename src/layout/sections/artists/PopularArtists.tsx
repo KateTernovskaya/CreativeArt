@@ -51,8 +51,7 @@ export const PopularArtists = () => {
 };
 
 const StyledPopularArtists = styled.section`
-  min-height: 50vh;
-  background-color: black;
+    display: none;
 `
 
 const Artists = styled.div`

@@ -28,9 +28,7 @@ export const Subscribe = () => {
 };
 
 const StyledSubscribe = styled.section`
-  background-color: #021641;
-  min-height: 50vh;
-  display: flex;
+  display: none;
 `
 
 const ImgBlock = styled.div`

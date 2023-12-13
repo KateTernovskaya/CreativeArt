@@ -115,8 +115,7 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-  background-color: black;
-  min-height: 50vh;
+display: none;
 `
 
 const SocialLink = styled.a`

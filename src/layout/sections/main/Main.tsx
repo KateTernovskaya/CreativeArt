@@ -57,9 +57,8 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-  background-color: rgb(2, 22, 65);
-  min-height: 50vh;
-  display: flex;
+
+  display: none;
   justify-content: space-between;
   
   div{

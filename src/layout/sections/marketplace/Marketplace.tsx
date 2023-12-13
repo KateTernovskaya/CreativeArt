@@ -25,7 +25,6 @@ export const Marketplace = () => {
 };
 
 const StyledMarketplace = styled.section`
-  background-color: black;
-  min-height: 50vh;
+display: none;
 `
 

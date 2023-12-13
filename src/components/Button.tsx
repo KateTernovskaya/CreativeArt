@@ -13,6 +13,7 @@ export const StyledBtn = styled.button<StyledBtnPropsType>`
   border-radius: 8px;
   background-color: transparent;
   color: white;
+  font-weight: 700;
   
   ${props => props.primary && css<StyledBtnPropsType>`
     background-color:  #D3F85A;

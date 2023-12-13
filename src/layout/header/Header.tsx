@@ -1,46 +1,36 @@
 import React from 'react';
-import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
 import {StyledBtn} from "../../components/Button";
+import {Container} from "../../components/wrapper/Container";
+import {FlexWrapper} from "../../components/wrapper/FlexWrapper";
+import {DesktopMenu} from "./headerMenu/desktopMenu/DesktopMenu";
+import {MobileMenu} from "./headerMenu/mobileMenu/MobileMenu";
+import {S} from './Header_Styles'
 
+const itemsMenu = ["Marketplace", "Artists", "Community", "Collections",]
 
-export const Header = () => {
+export const Header: React.FC = () => {
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 768;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleWindowResize);
+
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
+
     return (
-        <StyledHeader>
-            <Logo/>
-            <StyledMenu>
-                <ul>
-                    <li>
-                        <a href="#">Marketplace</a>
-                    </li>
-                    <li>
-                        <a href="#">Artists</a>
-                    </li>
-                    <li>
-                        <a href="#">Community</a>
-                    </li>
-                    <li>
-                        <a href="#">Collections</a>
-                    </li>
-                </ul>
-            </StyledMenu>
-            <StyledBtn primary>Contact</StyledBtn>
-        </StyledHeader>
+        <S.Header>
+            <Container>
+                <FlexWrapper justify={'space-between'} align={'center'}>
+                    <Logo/>
+
+                    {width < breakpoint ? <MobileMenu menuItems={itemsMenu}/>
+                        : <DesktopMenu menuItems={itemsMenu}/>}
+                    <StyledBtn primary>Contact</StyledBtn>
+                </FlexWrapper>
+            </Container>
+        </S.Header>
     );
 };
-
-const StyledHeader = styled.header`
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30vh;
-`
-
-const StyledMenu = styled.nav`
-  ul {
-    display: flex;
-    gap: 20px
-  }
-`

@@ -29,8 +29,6 @@ export const CreateYourNft = () => {
 };
 
 const StyledCreateYourNft = styled.section`
-  min-height: 50vh;
-  background-color: rgba(2, 22, 65, 0.8);
-  display: flex;
+  display: none;
 `
 
