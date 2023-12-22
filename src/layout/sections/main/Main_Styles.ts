@@ -5,8 +5,7 @@ import {font} from "../../../styles/FontMixin";
 import mainImg from "../../../assets/images/section/main/main.png";
 
 const Main = styled.section`
-  margin-top: 46px;
-
+  
   ${Container} {
     display: flex;
     justify-content: space-between;
@@ -20,7 +19,6 @@ const Main = styled.section`
   }
 
   @media ${theme.media.mobile} {
-    margin-top: 0;
     position: relative;
 
     .stats {
@@ -121,15 +119,16 @@ const Bid = styled.div`
   padding: 20px;
   flex-direction: column;
   gap: 24px;
+  z-index: 2;
 
   border-radius: 16px;
   border-top: 1px solid ${theme.colors.accent};
   background: ${theme.colors.anyBg};
-  box-shadow: 0 9px 50px 0 rgba(23, 36, 65, 0.04);
+  box-shadow: 0px 19px 40px 0px rgba(23, 36, 65, 1);
 
   position: absolute;
   top: 85%;
-  left: 45%;
+  right: -10%;
 
   .accent {
     ${font({Fmax: 16, Fmin: 14})};

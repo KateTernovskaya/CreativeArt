@@ -6,6 +6,7 @@ import {PopularArtists} from "./layout/sections/artists/PopularArtists";
 import {CreateYourNft} from "./layout/sections/create-your-nft/CreateYourNft";
 import {Subscribe} from "./layout/sections/subscribe/Subscribe";
 import {Footer} from "./layout/footer/Footer";
+import {GoTopBtn} from "./components/goTopBtn/GoTopBtn";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <PopularArtists/>
             <Subscribe/>
             <Footer/>
+            <GoTopBtn/>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import {createGlobalStyle} from "styled-components";
 import {theme} from "./Theme";
-import bgImg from '../assets/images/Bg.webp'
+import bgImg from '../assets/images/bg.webp'
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -22,8 +22,6 @@ export const GlobalStyle = createGlobalStyle`
     background-image: linear-gradient(to bottom,
     rgba(0, 0, 0, 0.9),
     rgba(0, 0, 0, 0.9)), url(${bgImg});
-    //background-repeat: repeat-y;
-    //font-family: 'Kalnia', serif;
   }
 
   a, a:visited, a:hover {
@@ -41,12 +39,16 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     cursor: pointer;
   }
-  
-  section{
-    padding: 46px 0;
+
+  section {
+    padding: 92px 0;
+
+    @media ${theme.media.mobile} {
+      padding: 60px 0;
+    }
   }
-  
-  .accent{
+
+  .accent {
     color: ${theme.colors.accent};
   }
 `

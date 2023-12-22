@@ -1,13 +1,11 @@
 import React from 'react';
 import {Logo} from "../../components/logo/Logo";
-import {StyledBtn} from "../../components/Button";
+import {StyledBtn} from "../../components/button/Button";
 import {Container} from "../../components/wrapper/Container";
 import {FlexWrapper} from "../../components/wrapper/FlexWrapper";
 import {DesktopMenu} from "./headerMenu/desktopMenu/DesktopMenu";
 import {MobileMenu} from "./headerMenu/mobileMenu/MobileMenu";
 import {S} from './Header_Styles'
-
-const itemsMenu = ["Marketplace", "Artists", "Community", "Collections",]
 
 export const Header: React.FC = () => {
     const [width, setWidth] = React.useState(window.innerWidth);
@@ -26,8 +24,8 @@ export const Header: React.FC = () => {
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
 
-                    {width < breakpoint ? <MobileMenu menuItems={itemsMenu}/>
-                        : <DesktopMenu menuItems={itemsMenu}/>}
+                    {width < breakpoint ? <MobileMenu/>
+                        : <DesktopMenu/>}
                     <StyledBtn primary>Contact</StyledBtn>
                 </FlexWrapper>
             </Container>

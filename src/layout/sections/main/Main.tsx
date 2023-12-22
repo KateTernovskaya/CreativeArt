@@ -1,39 +1,52 @@
 import React from 'react';
 import {FlexWrapper} from "../../../components/wrapper/FlexWrapper";
-import {StyledBtn} from "../../../components/Button";
+import {StyledBtn} from "../../../components/button/Button";
 import {Container} from "../../../components/wrapper/Container";
 import {Icon} from "../../../components/icon/Icon";
 import {S} from './Main_Styles'
 
+const statItems = [
+    {
+        title: 'Art work',
+        count: 8.9,
+    },
+    {
+        title: 'Artist',
+        count: 65,
+    },
+    {
+        title: 'Collection',
+        count: 87,
+    },
+]
+
 export const Main = () => {
     return (
-        <S.Main>
+        <S.Main id={'main'}>
             <Container>
                 <S.Content>
                     <S.Title>Discover and
                         Collect The Best NFTs <span className='accent'>Digital Art.</span>
                     </S.Title>
                     <p>Get started with the easiest and most secure platform to buy and trade digital ART and NFT’s.
-                        Start
-                        exploring the world of digital art and NFTs today and take control of your digital assets with
+                        Start exploring the world of digital art and NFTs today and take control of your digital assets
+                        with
                         confidence!</p>
                     <FlexWrapper gap={'10px'}>
                         <StyledBtn primary>Explore Now</StyledBtn>
                         <StyledBtn>Learn More</StyledBtn>
                     </FlexWrapper>
                     <FlexWrapper className='stats' justify={'space-between'}>
-                        <S.Stat>
-                            <S.StatCount><span className={'accent'}>8.9</span>K</S.StatCount>
-                            <div>Art work</div>
-                        </S.Stat>
-                        <S.Stat>
-                            <S.StatCount><span className={'accent'}>65</span>K</S.StatCount>
-                            <div>Artist</div>
-                        </S.Stat>
-                        <S.Stat>
-                            <S.StatCount><span className={'accent'}>87</span>K</S.StatCount>
-                            <div>Collection</div>
-                        </S.Stat>
+                        {statItems.map((item) => {
+                            return (
+                                <S.Stat>
+                                    <S.StatCount>
+                                        <span className={'accent'}>{`${item.count}`}</span>K
+                                    </S.StatCount>
+                                    <div>{`${item.title}`}</div>
+                                </S.Stat>
+                            )
+                        })}
                     </FlexWrapper>
                 </S.Content>
                 <S.Hero>

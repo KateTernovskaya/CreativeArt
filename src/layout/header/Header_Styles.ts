@@ -1,7 +1,8 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../styles/Theme";
-import {StyledBtn} from "../../components/Button";
+import {StyledBtn} from "../../components/button/Button";
 import {font} from "../../styles/FontMixin";
+import {Link} from "react-scroll";
 
 const Header = styled.header`
   padding: 28px 0;
@@ -86,7 +87,13 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   background-color: ${theme.colors.primaryBg};
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateY(-100%);
+  transition: .8s ease-in-out;
   
   position: absolute;
   top: 0;
@@ -94,12 +101,9 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   z-index: 9;
 
   ${props => props.isOpen && css<{ isOpen: boolean }>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
+        transform: translateY(0);
   `}
+  
   ul {
     padding: 20px;
     display: flex;
@@ -121,11 +125,11 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
 
 
 //Menu
-const Link = styled.a`
+const NavLink = styled(Link)`
   color: ${theme.colors.whiteDissable};
 
   &:hover {
-    transition: all .2s ease;
+    transition: ${theme.animation.transition};
     color: ${theme.colors.font};
     border-bottom: 1px solid ${theme.colors.accent};
   }
@@ -137,5 +141,5 @@ export const S = {
     MobileMenu,
     BurgerButton,
     MobileMenuPopup,
-    Link,
+    NavLink,
 }

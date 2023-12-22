@@ -1,59 +1,69 @@
 import React from 'react';
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/wrapper/FlexWrapper";
-import {Artist} from "./Artist";
-import Bg1 from '../../../assets/images/section/popular-artists/artictWork1.webp'
-import Bg2 from '../../../assets/images/section/popular-artists/artictWork2.webp'
-import Bg3 from '../../../assets/images/section/popular-artists/artictWork3.webp'
-import Bg4 from '../../../assets/images/section/popular-artists/artictWork4.webp'
-import Bg5 from '../../../assets/images/section/popular-artists/artictWork5.webp'
+import {Artist} from "./artistCard/Artist";
 
-import UserImg1 from '../../../assets/images/section/popular-artists/user/user (1).png'
-import UserImg2 from '../../../assets/images/section/popular-artists/user/user (2).png'
-import UserImg3 from '../../../assets/images/section/popular-artists/user/user (3).png'
-import UserImg4 from '../../../assets/images/section/popular-artists/user/user (4).png'
-import UserImg5 from '../../../assets/images/section/popular-artists/user/user (5).png'
-import {StyledBtn} from "../../../components/Button";
+import {StyledBtn} from "../../../components/button/Button";
+import {S} from "../marketplace/Market_Styles";
+import {Container} from "../../../components/wrapper/Container";
+import {theme} from "../../../styles/Theme";
 
 export const PopularArtists = () => {
     return (
-        <StyledPopularArtists>
-            <FlexWrapper justify={'space-between'}>
-                <h2>Popular <span>Artists </span>
-                    On This Week</h2>
-                <StyledBtn primary>See All</StyledBtn>
-            </FlexWrapper>
-            <Artists>
-                <Artist bg={Bg1}
-                        userPhoto={UserImg1}
-                        userName={'Osvaldo Percy'}/>
+        <StyledPopularArtists id={'artists'}>
+            <Container>
+                <S.SectionTitle>
+                    <S.Title> Popular <span className='accent'>Artists</span> <br/>
+                        On This Week</S.Title>
+                    <StyledBtn className='title_btn' primary>See All</StyledBtn>
+                </S.SectionTitle>
 
-                <Artist bg={Bg5}
-                        userPhoto={UserImg5}
-                        userName={'Ranson Sqiure'}/>
-
-                <Artist bg={Bg2}
-                        userPhoto={UserImg2}
-                        userName={'Cristio leo'}/>
-
-                <Artist bg={Bg3}
-                        userPhoto={UserImg3}
-                        userName={'Abraham Zack'}/>
-
-                <Artist bg={Bg4}
-                        userPhoto={UserImg4}
-                        userName={'Sebastian waltan'}/>
-
-
-            </Artists>
+                <Artists>
+                    <Artist />
+                </Artists>
+            </Container>
         </StyledPopularArtists>
     );
 };
 
 const StyledPopularArtists = styled.section`
-    display: none;
+  @media ${theme.media.mobile} {
+    .cards {
+      justify-content: center;
+    }
+    ${Container} {
+      position: relative;
+
+      .title_btn {
+        position: absolute;
+        bottom: -80px;
+        left: 50%;
+        translate: -50%;
+      }
+    }
+  }
 `
 
 const Artists = styled.div`
+  display: grid;
+  grid-auto-rows: 311px;
+  grid-template-columns: repeat(3, auto);
+  gap: 30px;
 
+  & article:nth-child(3) {
+    grid-row: 1/3;
+    grid-column: 3;
+  }
+
+  @media ${theme.media.tablet} {
+    grid-template-columns: 1fr 1fr;
+
+    & article :nth-child(3) {
+      grid-row: auto;
+      grid-column: auto;
+    }
+  }
+
+  @media ${theme.media.mobile} {
+    grid-template-columns: 1fr ;
+  }
 `
