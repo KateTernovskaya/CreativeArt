@@ -35,8 +35,8 @@ const marketItems = [
 export const MarketCard: React.FC = () => {
     return (
         <>
-            {marketItems.map((item) => {
-                return <S.Card><S.CardWrapper>
+            {marketItems.map((item, index) => {
+                return <S.Card key={index}><S.CardWrapper>
                     <img src={item.src} srcSet={`${item.src2x} 2x`} alt=""/>
                     <FlexWrapper align={'center'} justify={'space-between'} gap={'15px'}>
                         <S.CardName>{`${item.title}`}</S.CardName>
@@ -53,7 +53,7 @@ export const MarketCard: React.FC = () => {
                                 03:24:56
                             </FlexWrapper>
                         </FlexWrapper>
-                        <StyledBtn outlined> Place A Bid</StyledBtn>
+                        <StyledBtn outlined>Place A Bid</StyledBtn>
                     </S.CardInfo>
                 </S.CardWrapper>
                 </S.Card>

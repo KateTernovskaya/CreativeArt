@@ -33,13 +33,13 @@ export const Main = () => {
                         with
                         confidence!</p>
                     <FlexWrapper gap={'10px'}>
-                        <StyledBtn primary>Explore Now</StyledBtn>
-                        <StyledBtn>Learn More</StyledBtn>
+                        <StyledBtn as={'a'} primary>Explore Now</StyledBtn>
+                        <StyledBtn as={'a'}>Learn More</StyledBtn>
                     </FlexWrapper>
                     <FlexWrapper className='stats' justify={'space-between'}>
-                        {statItems.map((item) => {
+                        {statItems.map((item, index) => {
                             return (
-                                <S.Stat>
+                                <S.Stat key={index}>
                                     <S.StatCount>
                                         <span className={'accent'}>{`${item.count}`}</span>K
                                     </S.StatCount>

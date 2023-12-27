@@ -5,7 +5,6 @@ import {font} from "../../../styles/FontMixin";
 import mainImg from "../../../assets/images/section/main/main.png";
 
 const Main = styled.section`
-  
   ${Container} {
     display: flex;
     justify-content: space-between;
@@ -95,7 +94,6 @@ const Hero = styled.div`
     position: absolute;
     top: 157px;
     right: 169px;
-    border: 1px solid red;
     z-index: -99;
   }
 

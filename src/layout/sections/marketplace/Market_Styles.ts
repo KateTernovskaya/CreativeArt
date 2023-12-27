@@ -2,7 +2,6 @@ import {theme} from "../../../styles/Theme";
 import styled from "styled-components";
 import {font} from "../../../styles/FontMixin";
 import {Container} from "../../../components/wrapper/Container";
-import {FlexWrapper} from "../../../components/wrapper/FlexWrapper";
 
 //Market Card
 const Card = styled.article`
@@ -74,21 +73,6 @@ const Marketplace = styled.section`
   }
 `
 
-const SectionTitle = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
-  margin-bottom: 60px;
-`
-
-const Title = styled.h2`
-  max-width: 626px;
-  width: 100%;
-  ${font({family: 'Kalnia', weight: 500, Fmax: 48, Fmin: 31})}
-  line-height: 120%;
-`
-
 export const S = {
     Card,
     CardWrapper,
@@ -96,6 +80,4 @@ export const S = {
     CardInfo,
     End,
     Marketplace,
-    SectionTitle,
-    Title,
 }

@@ -10,6 +10,21 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  
+  *::-webkit-scrollbar{
+    width: 20px;
+  }
+  
+  *::-webkit-scrollbar-track{
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  *::-webkit-scrollbar-thumb{
+      background-color: ${theme.colors.accent};
+    border: 3px solid rgba(0, 0, 0, 0.9);
+    height: 10px;
+    border-radius: 16px;
+  }
 
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
